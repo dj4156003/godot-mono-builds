@@ -280,7 +280,7 @@ def clean(opts: AndroidOpts, product: str, target: str):
 
 def main(raw_args):
     import cmd_utils
-    # from cmd_utils import custom_bool
+    from cmd_utils import custom_bool
     from collections import OrderedDict
     from typing import Callable
 
