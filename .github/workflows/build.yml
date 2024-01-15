@@ -440,10 +440,10 @@ jobs:
           sudo apt-get -y install git autoconf libtool libtool-bin automake build-essential gettext cmake python3 curl
       - name: Install Android SDK Manager
         run: |
-          /usr/local/lib/android/sdk/tools/bin/sdkmanager --verbose --no_https --update
-          /usr/local/lib/android/sdk/tools/bin/sdkmanager --verbose --no_https "platforms;${ANDROID_PLATFORM}"
-          /usr/local/lib/android/sdk/tools/bin/sdkmanager "ndk;${ANDROID_NDK_VERSION}"
-          /usr/local/lib/android/sdk/tools/bin/sdkmanager "cmake;${ANDROID_CMAKE_VERSION}"
+          /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --verbose --no_https --update
+          /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --verbose --no_https "platforms;${ANDROID_PLATFORM}"
+          /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager "ndk;${ANDROID_NDK_VERSION}"
+          /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager "cmake;${ANDROID_CMAKE_VERSION}"
           echo "ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/$ANDROID_NDK_VERSION" >> $GITHUB_ENV
       - name: Cache Mono Sources
         id: cache_mono_sources
