@@ -11,7 +11,7 @@ import runtime
 
 
 DEFAULT_NDK_VERSION = '23.2.8568313'
-DEFAULT_CMAKE_VERSION = '3.10.2.4988404'
+DEFAULT_CMAKE_VERSION = '3.22.1'
 targets = ['armv7', 'arm64v8', 'x86', 'x86_64']
 
 
@@ -231,7 +231,7 @@ def setup_android_target_template(env: dict, opts: AndroidOpts, target: str):
 
 def strip_libs(opts: AndroidOpts, product: str, target: str):
     ndk_path = os.path.join(opts.android_sdk_root, 'ndk', opts.android_ndk_version)
-    toolchain_path = os.path.join(ndk_path, 'toolchains/llvm/prebuilt/linux-x86_64')
+    toolchain_path = os.path.join(ndk_path, 'toolchains/llvm/prebuilt/darwin-x86_64')
     strip = os.path.join(toolchain_path, 'bin', 'llvm-strip')
 
     install_dir = os.path.join(opts.install_dir, '%s-%s-%s' % (product, target, opts.configuration))
