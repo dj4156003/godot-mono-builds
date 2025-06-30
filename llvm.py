@@ -30,9 +30,7 @@ def make(opts: BaseOpts, target: str):
     mkdir_p(build_dir)
     mkdir_p(install_dir)
 
-    CMAKE_ARGS = [
-        '-DCMAKE_POLICY_VERSION_MINIMUM=3.5'
-    ]
+    CMAKE_ARGS = []
 
     if target in mxe_targets:
         mxe = mxe_targets[target]['mxe']

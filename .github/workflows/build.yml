@@ -61,7 +61,7 @@ jobs:
         if: steps.cache_llvm.outputs.cache-hit != 'true' && runner.os == 'Linux'
         run: |
           sudo apt-get -y update
-          sudo apt-get -y install git autoconf libtool libtool-bin automake gettext cmake python3 curl
+          sudo apt-get -y install git autoconf libtool libtool-bin automake gettext cmake=3.5 python3 curl
       - name: Install Linux SDK (x86_64)
         if: steps.cache_llvm.outputs.cache-hit != 'true' && runner.os == 'Linux'
         run: |
