@@ -85,7 +85,7 @@ jobs:
           brew install autoconf 
           brew install automake 
           brew install libtool
-          brew extract — version=3.28.1 cmake homebrew/cask 
+          brew extract --version=3.28.1 cmake homebrew/cask 
           brew install cmake@3.28.1
       - name: Cache Mono Sources
         if: steps.cache_llvm.outputs.cache-hit != 'true'
