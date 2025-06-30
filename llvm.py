@@ -41,7 +41,8 @@ def make(opts: BaseOpts, target: str):
             '-DCROSS_TOOLCHAIN_FLAGS_NATIVE=-DCMAKE_TOOLCHAIN_FILE=%s/external/llvm-project/llvm/cmake/modules/NATIVE.cmake' % opts.mono_source_root,
             '-DCMAKE_TOOLCHAIN_FILE=%s/external/llvm-project/llvm/cmake/modules/%s.cmake' % (opts.mono_source_root, mxe),
             '-DLLVM_ENABLE_THREADS=Off',
-            '-DLLVM_BUILD_EXECUTION_ENGINE=Off'
+            '-DLLVM_BUILD_EXECUTION_ENGINE=Off',
+            '-DCMAKE_POLICY_VERSION_MINIMUM=3.5'
         ]
 
         if sys.platform == 'darwin':
