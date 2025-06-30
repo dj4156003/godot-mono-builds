@@ -41,11 +41,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest-large]
+        os: [macos-13]
         target: [llvm64, llvmwin64]
         exclude:
           # We already build for Windows on ubuntu-latest
-          - os: macos-latest-large
+          - os: macos-13
             target: llvmwin64
     steps:
       - name: Cache LLVM
@@ -80,7 +80,7 @@ jobs:
         run: |
           sudo apt-get -y install mingw-w64 libz-mingw-w64-dev
       - name: Install Dependencies (macOS)
-        if: steps.cache_llvm.outputs.cache-hit != 'true' && matrix.os == 'macos-latest-large'
+        if: steps.cache_llvm.outputs.cache-hit != 'true' && matrix.os == 'macos-13'
         run: |
           brew install autoconf automake libtool
       - name: Cache Mono Sources
