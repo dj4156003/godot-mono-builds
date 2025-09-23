@@ -1,0 +1,23 @@
+diff --git a/mono/tools/offsets-tool/clang/cindex.py b/mono/tools/offsets-tool/clang/cindex.py
+index 8e5a9fe0068..21045b3e0d8 100644
+--- a/mono/tools/offsets-tool/clang/cindex.py
++++ b/mono/tools/offsets-tool/clang/cindex.py
+@@ -1312,7 +1312,8 @@ CursorKind.OMP_TEAMS_DISTRIBUTE_DIRECTIVE = CursorKind(271)
+ #
+ # The translation unit cursor exists primarily to act as the root cursor for
+ # traversing the contents of a translation unit.
+-CursorKind.TRANSLATION_UNIT = CursorKind(300)
++# Clang15 add
++CursorKind.TRANSLATION_UNIT = CursorKind(350)
+ 
+ ###
+ # Attributes
+@@ -1342,6 +1343,8 @@ CursorKind.VISIBILITY_ATTR = CursorKind(417)
+ 
+ CursorKind.DLLEXPORT_ATTR = CursorKind(418)
+ CursorKind.DLLIMPORT_ATTR = CursorKind(419)
++# Clang15 add
++CursorKind.FLAG_ENUM = CursorKind(437)
+ CursorKind.CONVERGENT_ATTR = CursorKind(438)
+ CursorKind.WARN_UNUSED_ATTR = CursorKind(439)
+ CursorKind.WARN_UNUSED_RESULT_ATTR = CursorKind(440)

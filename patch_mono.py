@@ -40,6 +40,7 @@ def main(raw_args):
         # 'log-mono-image-ref-unload.diff',
         # 'btls-cmake-args-linux-mingw.diff',
         # 'btls-cmake-arm64.diff',
+        #'offsets-tool-cindex-add-clang15-enum.diff'
     ]
 
     if os.path.isfile(os.path.join(mono_source_root, 'mono/tools/offsets-tool/offsets-tool.py')):
