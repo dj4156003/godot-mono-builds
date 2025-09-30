@@ -165,6 +165,8 @@ def setup_android_target_template(env: dict, opts: AndroidOpts, target: str):
     # Fixes this error: DllImport unable to load library 'dlopen failed: empty/missing DT_HASH in "libmono-native.so" (built with --hash-style=gnu?)'.
     LDFLAGS += ['-Wl,--hash-style=both']
 
+    LDFLAGS += ['-Wl,-z,max-page-size=16384']
+
     CONFIGURE_FLAGS = [
         '--with-sgen=no',
         '--with-libgc=included',
